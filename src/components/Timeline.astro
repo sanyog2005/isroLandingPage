@@ -183,10 +183,10 @@ const timelineEvents = [
           mobileLine = (
             <>
               <div class="absolute z-0" style={`top: 17px; left: 41px; width: calc(100% - 21px + 1.5rem); height: 6px; ${blueLine} border-left: none;`}></div>
-              <div class="absolute z-0" style={`top: 17px; right: 139px; width: calc(60% - 65px); height: 6px; ${blueLine} border-left: none;`}></div>
+              <div class="absolute z-0" style={`top: 17px; left: -20px; width: calc(60% - 65px); height: 6px; ${blueLine} border-left: none;`}></div>
 
               <div class="absolute z-0" style={`top: 17px; right: calc(100% + 1.5rem - 8px); width: 6px; height: calc(100% + 3rem + 4px); ${blueLine} border-top: none; border-bottom: none;`}></div>
-              <div class="absolute z-0" style={`top: calc(100% + 4rem + 17px); right: 140px; width: calc(10% - 21px + 1.5rem); height: 6px; ${orangeLine} border-right: none;`}></div>
+              <div class="absolute z-0" style={`top: calc(100% + 4rem + 17px); left: -20px; width: calc(10% - 21px + 1.5rem); height: 6px; ${orangeLine} border-right: none;`}></div>
             </>
           );
         } else if (index === 4) {
@@ -203,7 +203,7 @@ const timelineEvents = [
           );
         } else if (index === 6) {
           // Announcement: Straight Left
-          mobileLine = <div class="absolute z-0" style={`top: 17px; right: 140px; width: calc(100% + 0rem); height: 6px; ${orangeLine} border-left: none;`}></div>;
+          mobileLine = <div class="absolute z-0" style={`top: 17px; left: -140px; width: calc(100% + 0rem); height: 6px; ${orangeLine} border-left: none;`}></div>;
         }
 
         return (
