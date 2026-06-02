@@ -1,0 +1,19 @@
+{
+  "name": "bharatiya-antriksh-hackathon",
+  "version": "1.0.0",
+  "description": "Bharatiya Antriksh Hackathon 2026 Landing Page",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "tailwindcss": "^3.3.0"
+  }
+}

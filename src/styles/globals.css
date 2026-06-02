@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0A0C16] text-white font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-primary text-white rounded font-semibold hover:bg-orange-600 transition duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-6 py-3 border-2 border-primary text-primary rounded font-semibold hover:bg-primary hover:text-white transition duration-300;
+  }
+
+  .stat-box {
+    @apply flex flex-col items-center gap-2;
+  }
+
+  .stat-label {
+    @apply text-gray-400 text-sm uppercase tracking-wide;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-primary;
+  }
+}
+
+/* Hero video overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.7) 0%, rgba(10, 14, 39, 0.5) 100%);
+  z-index: 10;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}

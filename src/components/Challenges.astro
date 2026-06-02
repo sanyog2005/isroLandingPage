@@ -1,0 +1,289 @@
+---
+const challenges = [
+  {
+    id: "01",
+    text: "Simulation/Modelling of Forest Fire Spread using AI/ML techniques",
+  },
+  {
+    id: "02",
+    text: "AI-based Help bot for information retrieval out of a knowledge graph created based on static/dynamic content at a web portal.",
+  },
+  {
+    id: "03",
+    text: "Monitoring Air Pollution from Space using Satellite Observations, Ground-Based Measurements, Reanalysis Data, and AI/ML Techniques",
+  },
+  {
+    id: "04",
+    text: "Designing a chain of thought based LLM system for solving complex spatial analysis tasks through intelligent geoprocessing orchestration.",
+  },
+  {
+    id: "05",
+    text: "Chase the Cloud: Leveraging Diffusion Models for Cloud Motion Prediction using INSAT-3DR/3DS Imagery.",
+  },
+  {
+    id: "06",
+    text: "AI/ML-driven automated feature detection & change analysis of glacial lakes, road networks, & urban drainage systems from multi-source satellite imagery.",
+  },
+  {
+    id: "07",
+    text: "Developing an Algorithm for Air Quality Visualizer & Forecast App to generate granular, real-time, & predictive air quality information, especially in smaller cities or rural areas.",
+  },
+  {
+    id: "08",
+    text: "Novel Approaches for Optimizing Deep Learning in Earth Observation with Imbalanced Data.",
+  },
+  {
+    id: "09",
+    text: "Developing an AI/ML-based algorithm for identifying tropical cloud clusters using half-hourly satellite data from the INSAT.",
+  },
+];
+---
+<section
+  class="relative py-24 px-6 max-w-full mx-auto flex flex-col items-center"
+>
+  <div class="mb-16">
+    <h2
+      style="
+      width: 296px;
+      height: 37px;
+      text-align: center;
+      font-family: 'Pilat Extended', sans-serif !important;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 850;
+      line-height: 133%;
+      background: linear-gradient(90deg, #FFF 0%, #6FA4FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    "
+    >
+      Challenges
+    </h2>
+  </div>
+
+  <div class="w-full flex flex-col items-center">
+    
+    {/* ======================================================== */}
+    {/* 1. MOBILE VIEW (Visible only on small screens)           */}
+    {/* ======================================================== */}
+    <div class="block lg:hidden w-full">
+      {challenges.map((chal, index) => {
+        const isOrange = index % 2 === 0;
+        const themeColor = isOrange ? "#FF8A37" : "#82AFFF";
+        const bgColor = isOrange ? "rgba(255, 138, 55, 0.22)" : "rgba(83, 115, 255, 0.10)";
+        const btnBorder = isOrange ? "0.581px solid #FF8A37" : "0.581px solid #82AFFF";
+        const btnBg = isOrange ? "rgba(255, 138, 55, 0.43)" : "rgba(93, 151, 255, 0.43)";
+        const overlapClass = index > 0 ? "-mt-[0.881px]" : "";
+
+        return (
+          <div
+            class={`group relative flex flex-col px-4 py-5 w-full ${overlapClass}`}
+            style={`
+              background: ${bgColor};
+              border-top: 0.881px solid #C9C9C9;
+              border-bottom: 0.881px solid #C9C9C9;
+            `}
+          >
+            {/* Header: Number and Arrow */}
+            <div class="flex justify-between items-start w-full mb-3">
+              <div
+                style={`
+                  color: ${themeColor};
+                  font-family: 'Orbitron', sans-serif !important;
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 1;
+                `}
+              >
+                {chal.id}
+              </div>
+              <div style="width: 14px; height: 14px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                  <path d="M20.3216 20.7086V1.32178H0.934692M20.3216 1.32178L0.934692 20.7086" stroke={themeColor} stroke-width="2.64366" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Content: Image and Text */}
+            <div class="flex flex-row gap-4 w-full items-start">
+              {/* Image */}
+              <div class="flex-shrink-0 bg-[#0c101a] w-[120px] sm:w-[140px] h-[75px] sm:h-[85px] overflow-hidden">
+                <img
+                  src={`/assets/challenges/${chal.id}.png`}
+                  alt={`Challenge ${chal.id}`}
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+
+              {/* Text & Button */}
+              <div class="flex flex-col flex-1">
+                <p
+                  style="
+                    color: #FFF;
+                    font-family: 'Abel', sans-serif !important;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 140%;
+                  "
+                >
+                  {chal.text}
+                </p>
+
+                {/* View More Button (Expands smoothly on tap/hover) */}
+                <div class="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[40px] group-hover:opacity-100 group-hover:mt-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+                  <button
+                    class="flex items-center justify-center hover:brightness-110 transition-all cursor-pointer"
+                    style={`
+                      width: 85px;
+                      height: 26px;
+                      border: ${btnBorder};
+                      background: ${btnBg};
+                    `}
+                  >
+                    <span
+                      style="
+                        color: #FFF;
+                        font-family: 'Pilat Extended', sans-serif !important;
+                        font-size: 9px;
+                        font-weight: 400;
+                      "
+                    >
+                      View More
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* ======================================================== */}
+    {/* 2. DESKTOP VIEW (Your exact, untouched original code)    */}
+    {/* ======================================================== */}
+    <div class="hidden lg:flex flex-col w-full items-center">
+      {challenges.map((chal, index) => {
+        // Alternating Theme Logic
+        const isOrange = index % 2 === 0;
+
+        const themeColor = isOrange ? "#FF8A37" : "#82AFFF";
+        const unhoveredHeight = isOrange ? "157.557px" : "160.421px";
+        const bgColor = isOrange
+          ? "rgba(255, 138, 55, 0.22)"
+          : "rgba(83, 115, 255, 0.10)";
+
+        // Hover Button Theme
+        const btnBorder = isOrange
+          ? "0.581px solid #FF8A37"
+          : "0.581px solid #82AFFF";
+        const btnBg = isOrange
+          ? "rgba(255, 138, 55, 0.43)"
+          : "rgba(93, 151, 255, 0.43)";
+
+        // Overlap adjacent borders perfectly
+        const overlapClass = index > 0 ? "-mt-[0.881px]" : "";
+
+        return (
+          <div
+            class={`group relative overflow-hidden transition-[height] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex items-start px-8 gap-8 md:gap-[50px] ${overlapClass}`}
+            style={`
+                width: 100%; 
+                max-width: 1227.032px; 
+                height: ${unhoveredHeight}; 
+                background: ${bgColor};
+                border-top: 0.881px solid #C9C9C9;
+                border-bottom: 0.881px solid #C9C9C9;
+              `}
+            onmouseover="this.style.height='243.497px'"
+            onmouseout={`this.style.height='${unhoveredHeight}'`}
+          >
+            <div
+              class="transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] mt-[25.374px] group-hover:mt-[55.657px]"
+              style={`
+            width: 50px;
+            color: ${themeColor};
+            text-align: right;
+            font-family: 'Orbitron', sans-serif !important;
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          `}
+            >
+              {chal.id}
+            </div>
+
+            <div class="flex-shrink-0 bg-[#0c101a] overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] mt-[25.374px] group-hover:mt-[55.657px] w-[354.251px] h-[132.183px] group-hover:w-[354.251px] group-hover:h-[156px]">
+              <img
+                src={`/assets/challenges/${chal.id}.png`}
+                alt={`Challenge ${chal.id}`}
+                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+            <div class="flex flex-col transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] mt-[25.374px] group-hover:mt-[55.657px]">
+              <p
+                style="
+              width: 100%;
+              max-width: 452.066px;
+              color: #FFF;
+              font-family: 'Abel', sans-serif !important;
+              font-size: 18.991px;
+              font-style: light;
+              font-weight: 200;
+              line-height: 133%;
+            "
+              >
+                {chal.text}
+              </p>
+
+              <div class="mt-6 opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-500 ease-out">
+                <button
+                  class="flex items-center justify-center hover:brightness-110 transition-all cursor-pointer"
+                  style={`
+                width: 110.767px;
+                height: 35.331px;
+                border: ${btnBorder};
+                background: ${btnBg};
+              `}
+                >
+                  <span
+                    style="
+                  color: #FFF;
+                  font-family: 'Pilat Extended', sans-serif !important;
+                  font-size: 11.42px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 133%;
+                "
+                  >
+                    View More
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="absolute right-[40px] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] mt-[25.374px] group-hover:mt-[55.657px] group-hover:translate-x-2 group-hover:-translate-y-2">
+              <div style="width: 19.387px; height: 19.387px;">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                >
+                  <path
+                    d="M20.3216 20.7086V1.32178H0.934692M20.3216 1.32178L0.934692 20.7086"
+                    stroke={themeColor}
+                    stroke-width="2.64366"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
