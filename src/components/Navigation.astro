@@ -1,80 +1,135 @@
 ---
+
 ---
 
-<header 
-  class="fixed top-0 w-full z-50 border-b border-[#2a2d36]" 
+<header
+  class="fixed top-0 w-full z-50 border-b border-[#2a2d36]"
   style="font-family: 'Pilat Extended', sans-serif !important;"
 >
   <!-- Top Bar (Always visible) -->
   <div class="relative z-20 bg-[#020202] w-full">
-    <div class="max-w-full mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-      
+    <div
+      class="max-w-full mx-auto px-6 md:px-10 h-20 flex items-center justify-between"
+    >
       <!-- Logo -->
       <div class="flex items-center gap-5">
-        <img src="/assets/navlogo.png" alt="ISRO Logo" class="h-10 object-contain" />
+        <img
+          src="/assets/navlogo.png"
+          alt="ISRO Logo"
+          class="h-10 object-contain"
+        />
       </div>
 
       <!-- Desktop Navigation (Hidden on Mobile) -->
-      <div class="hidden lg:flex items-center gap-8"> 
-        <nav class="flex items-center gap-8 text-[#FFF] text-[14.187px] font-normal leading-[133%]">
-          <a href="#" class="hover:opacity-75 transition-opacity">About</a>
-          <a href="#" class="hover:opacity-75 transition-opacity">Why Participate?</a>
-          <a href="#" class="hover:opacity-75 transition-opacity">Challenges</a>
-          <a href="#" class="hover:opacity-75 transition-opacity">Schedules</a>
-          <a href="#" class="hover:opacity-75 transition-opacity">Rewards</a>
-          <a href="#" class="hover:opacity-75 transition-opacity">FAQs</a>
+      <div class="hidden lg:flex items-center gap-8">
+        <nav
+          class="flex items-center gap-8 text-[#FFF] text-[14.187px] font-normal leading-[133%]"
+        >
+          <a href="#about" class="hover:opacity-75 transition-opacity">About</a>
+          <a href="#why-participate" class="hover:opacity-75 transition-opacity"
+            >Why Participate?</a
+          >
+          <a href="#challenges" class="hover:opacity-75 transition-opacity"
+            >Challenges</a
+          >
+          <a href="#schedules" class="hover:opacity-75 transition-opacity"
+            >Schedules</a
+          >
+          <a href="#rewards" class="hover:opacity-75 transition-opacity"
+            >Rewards</a
+          >
+          <a href="#faqs" class="hover:opacity-75 transition-opacity">FAQs</a>
         </nav>
 
-        <a href="#" class="flex items-center justify-center w-[154px] bg-white text-black py-2.5 text-[14.187px] font-bold leading-[133%] hover:bg-gray-200 transition-colors">
+        <a
+          href="#"
+          class="flex items-center justify-center w-[154px] bg-white text-black py-2.5 text-[14.187px] font-bold leading-[133%] hover:bg-gray-200 transition-colors"
+        >
           Register now
         </a>
       </div>
 
       <!-- Mobile Hamburger Button (Hidden on Desktop) -->
-      <button 
-        id="mobile-menu-btn" 
+      <button
+        id="mobile-menu-btn"
         class="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-[6px] focus:outline-none cursor-pointer"
         aria-label="Toggle Menu"
       >
-        <span class="w-7 h-[2px] bg-white block transition-all duration-300 origin-center"></span>
-        <span class="w-7 h-[2px] bg-white block transition-all duration-300 origin-center"></span>
-        <span class="w-7 h-[2px] bg-white block transition-all duration-300 origin-center"></span>
+        <span
+          class="w-7 h-[2px] bg-white block transition-all duration-300 origin-center"
+        ></span>
+        <span
+          class="w-7 h-[2px] bg-white block transition-all duration-300 origin-center"
+        ></span>
+        <span
+          class="w-7 h-[2px] bg-white block transition-all duration-300 origin-center"
+        ></span>
       </button>
-
     </div>
   </div>
 
   <!-- Mobile Dropdown Menu (Slides down from under the top bar) -->
-  <div 
-    id="mobile-dropdown" 
+  <div
+    id="mobile-dropdown"
     class="absolute top-20 left-0 w-full bg-[#020202] border-b border-[#2a2d36] flex flex-col items-center py-8 gap-6 -z-10 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] -translate-y-full opacity-0 pointer-events-none shadow-2xl lg:hidden"
   >
-    <nav class="flex flex-col items-center gap-6 text-[#FFF] text-[16px] font-normal leading-[133%] w-full">
-      <a href="#" class="hover:text-[#6FA4FF] transition-colors w-full text-center py-2">About</a>
-      <a href="#" class="hover:text-[#6FA4FF] transition-colors w-full text-center py-2">Why Participate?</a>
-      <a href="#" class="hover:text-[#6FA4FF] transition-colors w-full text-center py-2">Challenges</a>
-      <a href="#" class="hover:text-[#6FA4FF] transition-colors w-full text-center py-2">Schedules</a>
-      <a href="#" class="hover:text-[#6FA4FF] transition-colors w-full text-center py-2">Rewards</a>
-      <a href="#" class="hover:text-[#6FA4FF] transition-colors w-full text-center py-2">FAQs</a>
+    <nav
+      class="flex flex-col items-center gap-6 text-[#FFF] text-[16px] font-normal leading-[133%] w-full"
+    >
+      <a
+        href="#about"
+        class="mobile-link hover:text-[#6FA4FF] transition-colors w-full text-center py-2"
+        >About</a
+      >
+      <a
+        href="#why-participate"
+        class="mobile-link hover:text-[#6FA4FF] transition-colors w-full text-center py-2"
+        >Why Participate?</a
+      >
+      <a
+        href="#challenges"
+        class="mobile-link hover:text-[#6FA4FF] transition-colors w-full text-center py-2"
+        >Challenges</a
+      >
+      <a
+        href="#schedules"
+        class="mobile-link hover:text-[#6FA4FF] transition-colors w-full text-center py-2"
+        >Schedules</a
+      >
+      <a
+        href="#rewards"
+        class="mobile-link hover:text-[#6FA4FF] transition-colors w-full text-center py-2"
+        >Rewards</a
+      >
+      <a
+        href="#faqs"
+        class="mobile-link hover:text-[#6FA4FF] transition-colors w-full text-center py-2"
+        >FAQs</a
+      >
     </nav>
 
-    <a href="#" class="flex items-center justify-center w-[200px] bg-white text-black py-3 text-[16px] font-bold leading-[133%] hover:bg-gray-200 transition-colors mt-2">
+    <a
+      href="#"
+      class="flex items-center justify-center w-[200px] bg-white text-black py-3 text-[16px] font-bold leading-[133%] hover:bg-gray-200 transition-colors mt-2"
+    >
       Register now
     </a>
   </div>
-
 </header>
 
 <!-- Interactivity Logic -->
 <script>
   const btn = document.getElementById('mobile-menu-btn');
   const dropdown = document.getElementById('mobile-dropdown');
+  // Get all mobile links using the class we added in step 1
+  const mobileLinks = document.querySelectorAll('.mobile-link');
   
   if (btn && dropdown) {
     const spans = btn.querySelectorAll('span');
     let isOpen = false;
 
-    btn.addEventListener('click', () => {
+    // Helper function to toggle the menu
+    const toggleMenu = () => {
       isOpen = !isOpen;
 
       if (isOpen) {
@@ -96,6 +151,16 @@
         spans[1].classList.remove('opacity-0', 'scale-x-0');
         spans[2].classList.remove('-rotate-45', '-translate-y-[8px]');
       }
+    };
+
+    // Toggle menu when hamburger button is clicked
+    btn.addEventListener('click', toggleMenu);
+
+    // Close menu when ANY link inside the mobile menu is clicked
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen) toggleMenu();
+      });
     });
   }
 </script>

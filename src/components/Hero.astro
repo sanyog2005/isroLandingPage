@@ -28,28 +28,26 @@
 
 </section>
 <script>
-  // Wait until the entire page (including images and fonts) has loaded
   window.addEventListener('load', () => {
     
-    // Find our video element
+    // NEW: Check if the screen is smaller than Tailwind's 'lg' breakpoint (1024px)
+    // If it's a mobile device, stop immediately and don't download the video.
+    if (window.innerWidth < 924) return;
+
     const video = document.getElementById('hero-video') as HTMLVideoElement;
     if (!video) return;
 
     const source = video.querySelector('source');
     if (!source) return;
 
-    // Optional: Wait 1 extra second before loading the video (1000ms)
-    // You can increase this to 2000 or 3000 if you want a longer delay
     setTimeout(() => {
-      // Swap data-src to the real src
-      source.src = source.dataset.src!;
+      source.src = source.dataset.src || '';
       
-      // Tell the video to load the new source and play
       video.load();
       video.play().catch(error => {
-        console.warn("Video autoplay was prevented by the browser:", error);
+        console.warn("Video autoplay was prevented:", error);
       });
-    }, 500); 
+    }, 1000); 
 
   });
 </script>
