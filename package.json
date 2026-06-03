@@ -10,6 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/abel": "^5.2.7",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/orbitron": "^5.2.8",
+    "@fontsource/poppins": "^5.2.7",
     "astro": "^4.0.0"
   },
   "devDependencies": {

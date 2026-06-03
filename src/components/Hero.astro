@@ -1,21 +1,55 @@
-<section class="relative min-h-[500px] lg:min-h-[700px] flex flex-col justify-start px-4 md:px-20 lg:px-6 pt-16 lg:pt-20 mt-10 pb-0 overflow-hidden">
+<section class="hero-root relative min-h-[500px] lg:min-h-[700px] flex flex-col justify-start px-4 md:px-20 lg:px-6 pt-16 lg:pt-20 mt-10 pb-0 overflow-hidden">
   
-  <div class="absolute inset-0 w-full h-full z-0 overflow-hidden block lg:hidden py-10">
+  <div class="absolute inset-0 w-full h-full z-0 block lg:hidden py-10">
     <img 
-      src="../../assets/heroBGMobile.png" 
+      src="/assets/heroBGMobile.webp" 
       alt="Hero Background" 
-      class="w-full h-full object-cover object-center" 
+      class="hero-image w-full h-full object-cover object-center" 
+      fetchpriority="high"
     />
   </div>
 
-  <div class="absolute inset-0 w-full h-full z-0 overflow-hidden hidden lg:block">
-    <!-- <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div> -->
-    <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
-      <source src="../../assets/vide.mp4" type="video/mp4" />
+  <div class="absolute inset-0 w-full h-full z-0 hidden lg:block">
+    <video 
+      id="hero-video"
+      loop 
+      muted 
+      playsinline 
+      preload="none" 
+      poster="/assets/vidBG.webp" 
+      class="hero-image w-full h-full object-cover object-center transition-opacity duration-1000"
+    >
+      <source data-src="/assets/vide.mp4" type="video/mp4" />
     </video>
   </div>
 
   <div class="relative z-20 max-w-4xl mt-10 md:mt-16">
-    </div>
+  </div>
 
 </section>
+<script>
+  // Wait until the entire page (including images and fonts) has loaded
+  window.addEventListener('load', () => {
+    
+    // Find our video element
+    const video = document.getElementById('hero-video') as HTMLVideoElement;
+    if (!video) return;
+
+    const source = video.querySelector('source');
+    if (!source) return;
+
+    // Optional: Wait 1 extra second before loading the video (1000ms)
+    // You can increase this to 2000 or 3000 if you want a longer delay
+    setTimeout(() => {
+      // Swap data-src to the real src
+      source.src = source.dataset.src!;
+      
+      // Tell the video to load the new source and play
+      video.load();
+      video.play().catch(error => {
+        console.warn("Video autoplay was prevented by the browser:", error);
+      });
+    }, 500); 
+
+  });
+</script>

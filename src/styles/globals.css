@@ -63,6 +63,20 @@
   z-index: 0;
 }
 
+/* Performance helpers for hero to reduce layout/render blocking without visual changes */
+.hero-root {
+  contain: paint;
+  will-change: transform;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Smooth animations */
 @keyframes fadeInUp {
   from {
