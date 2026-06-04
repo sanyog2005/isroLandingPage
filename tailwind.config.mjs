@@ -18,6 +18,10 @@ export default {
         abel: ['Abel', 'sans-serif'],
         pilat: ['"Pilat Extended"', 'sans-serif'],
       },
+      screens: {
+        // Change '1200px' to whatever pixel value you want desktop to start at
+        'lg': '1400px', 
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,9 @@
 <section id="rewards" class="relative py-10 px-0 max-w-[1600px] mx-auto flex flex-col items-center overflow-hidden">
 
-  <div class="flex lg:hidden flex-col w-full px-4 relative z-10 mt-4 mb-10">
+  <!-- ============================== -->
+  <!-- MOBILE VIEW (<768px)           -->
+  <!-- ============================== -->
+  <div class="flex md:hidden flex-col w-full px-4 relative z-10 mt-4 mb-10">
     
     <div class="mb-10 flex justify-center w-full">
       <h2 style="
@@ -89,6 +92,101 @@
     </div>
   </div>
 
+  <!-- ============================== -->
+  <!-- TABLET VIEW (768px - lg)       -->
+  <!-- ============================== -->
+  <div class="hidden md:flex lg:hidden flex-col w-full px-8 relative z-10 mt-6 mb-12">
+    
+    <div class="mb-12 flex justify-center w-full">
+      <h2 style="
+        width: 100%;
+        text-align: center;
+        font-family: 'Pilat Extended', sans-serif !important;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 850;
+        line-height: 133%;
+        background: linear-gradient(90deg, #FFF 0%, #6FA4FF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      ">
+        R<span style="text-transform: lowercase;">ewards</span> and Benefits
+      </h2>
+    </div>
+
+    <div class="relative w-full flex flex-col gap-6 max-w-[700px] mx-auto">
+      
+      <div class="absolute left-[-15px] top-[50%] -translate-y-1/2 z-20 pointer-events-none w-[360px]">
+        <img 
+          src="/assets/astr2.png" 
+          alt="Astronaut" 
+          class="w-full h-auto object-contain drop-shadow-2xl" 
+        />
+      </div>
+
+      <div class="flex flex-col justify-center items-start w-full min-h-[110px] rounded-[15px] z-10 pl-[310px] pr-8 py-8 shadow-lg" style="
+        background: linear-gradient(90deg, rgba(10, 6, 18, 0.00) 0%, rgba(209, 98, 21, 0.85) 35%, #F37216 100%);
+      ">
+        <h3 style="
+          color: #FFF;
+          text-align: left; 
+          font-family: 'Pilat Extended', sans-serif !important;
+          font-size: 18px;
+          font-style: bold;
+          font-weight: 500;
+          line-height: 130%;
+          margin-bottom: 0.75rem;
+        ">
+          Recognition and<br/>Internship Opportunities
+        </h3>
+        <p style="
+          color: #FFF;
+          text-align: left; 
+          font-family: 'Abel', sans-serif !important;
+          font-size: 15px; 
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+        ">
+          Recognition by ISRO and the chance to grab an internship at ISRO.
+        </p>
+      </div>
+
+      <div class="flex flex-col justify-center items-start w-full min-h-[110px] rounded-[15px] z-10 pl-[310px] pr-8 py-8 shadow-lg" style="
+        background: linear-gradient(90deg, rgba(10, 6, 18, 0.00) 0%, rgba(61, 83, 185, 0.70) 35%, #5373FF 100%);
+      ">
+        <h3 style="
+          color: #FFF;
+          text-align: left; 
+          font-family: 'Pilat Extended', sans-serif !important;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 130%;
+          margin-bottom: 0.75rem;
+        ">
+          Mentorship from<br/>ISRO Experts
+        </h3>
+        <p style="
+          color: #FFF;
+          text-align: left; 
+          font-family: 'Abel', sans-serif !important;
+          font-size: 15px; 
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+        ">
+          Gain invaluable insights and guidance from leading scientists and engineers.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- DESKTOP VIEW (>=lg config)     -->
+  <!-- ============================== -->
   <div class="hidden lg:flex flex-col w-full items-center">
     
     <div class="mb-20 flex justify-center w-full">
@@ -191,7 +289,6 @@
 
     </div>
     
-  </div>
   </div>
 
 </section>

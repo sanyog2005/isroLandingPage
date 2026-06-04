@@ -29,7 +29,6 @@ const faqs = [
 
 <section id="faqs" class="relative py-10 lg:py-24 px-4 lg:px-6 max-w-full mx-auto overflow-hidden">
   
-  <!-- Background Gradients (Untouched) -->
   <div class="absolute top-1/2 left-0 pointer-events-none -z-10" 
        style="
          width: 208px; 
@@ -53,12 +52,7 @@ const faqs = [
        ">
   </div>
   
-  <!-- ======================================================== -->
-  <!-- 1. MOBILE VIEW (Visible only on small screens)           -->
-  <!-- ======================================================== -->
-  
-  <!-- Mobile Heading -->
-  <div class="flex lg:hidden justify-center w-full mb-8">
+  <div class="flex md:hidden justify-center w-full mb-8">
     <h2 style="
       text-align: center;
       font-family: 'Abel', sans-serif !important;
@@ -75,19 +69,16 @@ const faqs = [
     </h2>
   </div>
 
-  <!-- Mobile FAQ List -->
-  <div class="block lg:hidden max-w-full mx-auto content-center border-t border-[#2a2d36]">
+  <div class="block md:hidden max-w-full mx-auto content-center border-t border-[#2a2d36]">
     {faqs.map((faq, i) => {
       const isOrange = i % 2 === 0;
       const themeColor = isOrange ? '#FF8F3F' : '#82AFFF';
       
       return (
         <div class="faq-item border-b border-[#2a2d36] group cursor-pointer">
-          <!-- Accordion Header Row -->
           <div class="flex items-start justify-between py-5 gap-3 select-none w-full">
             
             <div class="flex items-start gap-4 flex-1">
-              <!-- Number Box -->
               <span style={`
                 font-family: 'Orbitron', sans-serif !important;
                 font-size: 14px;
@@ -99,7 +90,6 @@ const faqs = [
                 {String(i + 1).padStart(2, '0')}
               </span>
               
-              <!-- Question Text -->
               <h3 class="pr-2" style={`
                 color: ${themeColor};
                 font-family: 'Abel', sans-serif !important;
@@ -112,7 +102,6 @@ const faqs = [
               </h3>
             </div>
 
-            <!-- Custom Chevron Arrow Icon -->
             <div class="chevron-icon transition-transform duration-300 transform flex-shrink-0 mt-1">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={themeColor} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -121,7 +110,6 @@ const faqs = [
             
           </div>
 
-          <!-- Accordion Expandable Content Panel -->
           <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="pb-5 pl-[38px] pr-4">
               <p style="
@@ -141,12 +129,83 @@ const faqs = [
     })}
   </div>
 
+  <div class="hidden md:flex lg:hidden justify-center w-full mb-12">
+    <h2 style="
+      text-align: center;
+      font-family: 'Abel', sans-serif !important;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 750;
+      line-height: 133%;
+      background: linear-gradient(90deg, #FFF 0%, #6FA4FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    ">
+      Frequently Asked Question
+    </h2>
+  </div>
 
-  <!-- ======================================================== -->
-  <!-- 2. DESKTOP VIEW (Your exact, untouched original code)    -->
-  <!-- ======================================================== -->
-  
-  <!-- Desktop Heading -->
+  <div class="hidden md:block lg:hidden max-w-[800px] mx-auto content-center border-t border-[#2a2d36]">
+    {faqs.map((faq, i) => {
+      const isOrange = i % 2 === 0;
+      const themeColor = isOrange ? '#FF8F3F' : '#82AFFF';
+      
+      return (
+        <div class="faq-item border-b border-[#2a2d36] group cursor-pointer">
+          <div class="flex items-start justify-between py-6 gap-4 select-none w-full">
+            
+            <div class="flex items-start gap-6 flex-1">
+              <span style={`
+                font-family: 'Orbitron', sans-serif !important;
+                font-size: 18px;
+                font-weight: 450;
+                color: ${themeColor};
+                line-height: 1.4;
+                margin-top: 1px;
+              `}>
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              
+              <h3 class="pr-4" style={`
+                color: ${themeColor};
+                font-family: 'Abel', sans-serif !important;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+              `}>
+                {faq.q}
+              </h3>
+            </div>
+
+            <div class="chevron-icon transition-transform duration-300 transform flex-shrink-0 mt-1">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={themeColor} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            
+          </div>
+
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="pb-6 pl-[48px] pr-6">
+              <p style="
+                color: #c4c7cf;
+                font-family: 'Abel', sans-serif !important;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+              ">
+                {faq.a}
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
   <div class="hidden lg:flex justify-center w-full mb-16">
     <h2 style="
       text-align: center;
@@ -164,7 +223,6 @@ const faqs = [
     </h2>
   </div>
 
-  <!-- Desktop FAQ List -->
   <div class="hidden lg:block max-w-[1200px] mx-auto content-center border-t border-[#2a2d36] ">
     {faqs.map((faq, i) => {
       const isOrange = i % 2 === 0;
@@ -172,11 +230,9 @@ const faqs = [
       
       return (
         <div class="faq-item border-b border-[#2a2d36] group cursor-pointer">
-          <!-- Accordion Header Row -->
           <div class="flex items-center justify-between py-6 gap-6 select-none">
             
             <div class="flex items-center gap-8 md:gap-12 flex-1">
-              <!-- Number Box -->
               <span style={`
                 font-family: 'Orbitron', sans-serif !important;
                 font-size: 26px;
@@ -186,7 +242,6 @@ const faqs = [
                 {String(i + 1).padStart(2, '0')}
               </span>
               
-              <!-- Question Text -->
               <h3 style={`
                 color: ${themeColor};
                 font-family: 'Abel', sans-serif !important;
@@ -199,7 +254,6 @@ const faqs = [
               </h3>
             </div>
 
-            <!-- Custom Chevron Arrow Icon -->
             <div class="chevron-icon transition-transform duration-300 transform">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={themeColor} stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -208,7 +262,6 @@ const faqs = [
             
           </div>
 
-          <!-- Accordion Expandable Content Panel -->
           <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <div class="pb-6 pl-[52px] md:pl-[68px] pr-6">
               <p style="

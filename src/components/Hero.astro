@@ -1,12 +1,29 @@
 <section class="hero-root relative min-h-[500px] lg:min-h-[700px] flex flex-col justify-start px-4 md:px-20 lg:px-6 pt-16 lg:pt-20 mt-10 pb-0 overflow-hidden">
   
-  <div class="absolute inset-0 w-full h-full z-0 block lg:hidden py-10">
+  <div class="absolute inset-0 w-full h-full z-0 block md:hidden py-10">
     <img 
       src="/assets/heroBGMobile.webp" 
       alt="Hero Background" 
       class="hero-image w-full h-full object-cover object-center" 
       fetchpriority="high"
     />
+  </div>
+
+  <div class="absolute inset-0 w-full h-full z-0 hidden md:flex lg:hidden py-10 flex-col items-center justify-center">
+    
+    <img 
+      src="/assets/tabBGImg.webp" 
+      alt="Tablet Hero Background" 
+      class="absolute inset-0 w-full h-full object-cover object-center" 
+      fetchpriority="high"
+    />
+    
+    <img 
+      src="/assets/tabTItleImg.webp" 
+      alt="Tablet Hero Title" 
+      class="relative z-10 w-[80%] max-w-[550px] object-contain drop-shadow-2xl" 
+    />
+    
   </div>
 
   <div class="absolute inset-0 w-full h-full z-0 hidden lg:block">
@@ -19,7 +36,7 @@
       poster="/assets/vidBG.webp" 
       class="hero-image w-full h-full object-cover object-center transition-opacity duration-1000"
     >
-      <source data-src="../../assets/vide.mp4" type="video/mp4" />
+      <source data-src="/assets/vide.mp4" type="video/mp4" />
     </video>
   </div>
 
@@ -27,14 +44,16 @@
   </div>
 
 </section>
+
 <script>
   window.addEventListener('load', () => {
     
-    // NEW: Check if the screen is smaller than Tailwind's 'lg' breakpoint (1024px)
-    // If it's a mobile device, stop immediately and don't download the video.
-    if (window.innerWidth < 924) return;
+    // Check if the screen is smaller than your 'lg' breakpoint.
+    // Ensure this number matches your tailwind.config.js desktop setting! (Default is 1024)
+    if (window.innerWidth < 1024) return;
 
-    const video = document.getElementById('hero-video') as HTMLVideoElement;
+    // Note: removed TypeScript "as HTMLVideoElement" cast to ensure it runs natively in standard <script> tags
+    const video = document.getElementById('hero-video');
     if (!video) return;
 
     const source = video.querySelector('source');
